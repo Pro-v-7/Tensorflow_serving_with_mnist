@@ -166,9 +166,6 @@ with tf.Session() as sess:
 
 
     saver = tf.saved_model.builder.SavedModelBuilder("./m2")
-############################################
-# HOW DO I SET UP THE SIGNATURE CORRECTLY?
-############################################
     info_input = tf.saved_model.utils.build_tensor_info(x)
     info_output = tf.saved_model.utils.build_tensor_info(pred)
     signature = tf.saved_model.signature_def_utils.build_signature_def(
@@ -180,10 +177,6 @@ with tf.Session() as sess:
             sess
             ,[tf.saved_model.tag_constants.SERVING]
             ,signature_def_map={'sevring_default':signature}
-            ####################################################################
-            ### WHAT DO I NEED TO PUT HERE IN ORDER TO CALL THE MODEL LATER ON 
-            ### WHILE SERVING WITH DOCKER AND HOW DO I CALL IT IN DOCKER??
-            ####################################################################
             )
     saver.save()
 
