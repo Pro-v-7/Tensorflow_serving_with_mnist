@@ -7,7 +7,7 @@ Steps:
 
 1. First create the model using the mnist_cnn.py
 
-2. move the created pb file and variables into a folder 
+2. move the created pb file and variables into a new folder called "your model name"
 
 3. install docker if not installed
 
