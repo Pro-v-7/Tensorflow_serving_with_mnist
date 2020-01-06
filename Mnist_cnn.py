@@ -165,7 +165,7 @@ with tf.Session() as sess:
 
 
 
-    saver = tf.saved_model.builder.SavedModelBuilder("./m2")
+    saver = tf.saved_model.builder.SavedModelBuilder("./example_model/2")
     info_input = tf.saved_model.utils.build_tensor_info(x)
     info_output = tf.saved_model.utils.build_tensor_info(pred)
     signature = tf.saved_model.signature_def_utils.build_signature_def(
